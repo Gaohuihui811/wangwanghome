@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>旺旺的主页 🐾</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- 头部区域 -->
+  <header class="header">
+    <!-- 头像 -->
+    <div class="avatar-container">
+      <img
+        src="images/dog_avatar.jpg"
+        alt="旺旺的头像"
+        class="avatar-img"
+        onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+      >
+      <div class="avatar-placeholder" style="display:none;">
+        <span class="placeholder-icon">🐶</span>
+        <span class="placeholder-text">放入 images/dog_avatar.jpg</span>
+      </div>
+    </div>
+
+    <!-- 独立圆角介绍卡片 -->
+    <div class="info-card">
+      <h1 class="dog-name">旺旺</h1>
+      <p class="dog-parents">家长：GYH、Oy3</p>
+      <div class="dog-details">
+        <p>🐾 基础资料、性格介绍</p>
+        <p>📝 这里写下旺旺的品种、生日、爱好、性格特点……</p>
+      </div>
+    </div>
+  </header>
+
+  <!-- 相册区域 -->
+  <main class="gallery-section">
+    <h2 class="section-title">📸 旺旺的相册</h2>
+    <div class="gallery-grid" id="galleryGrid">
+      <!-- 空状态提示 -->
+      <div class="gallery-empty" id="galleryEmpty">
+        <span class="empty-icon">🦴</span>
+        <p>还没有照片，快来上传旺旺的美照吧～</p>
+      </div>
+    </div>
+  </main>
+
+  <!-- 图片上传模块 -->
+  <section class="upload-section">
+    <h2 class="section-title">📤 上传照片</h2>
+    <div class="upload-area" id="uploadArea">
+      <div class="upload-content">
+        <span class="upload-icon">☁️</span>
+        <p class="upload-text">点击选择文件，或拖拽图片到此处</p>
+        <p class="upload-hint">支持 JPG / PNG / WebP / GIF 动图，单文件最大 8MB</p>
+      </div>
+      <input
+        type="file"
+        id="fileInput"
+        class="file-input"
+        accept="image/jpeg,image/png,image/webp,image/gif"
+        multiple
+      >
+    </div>
+  </section>
+
+  <!-- 底部提示 -->
+  <footer class="footer">
+    <p class="footer-text">
+      ☁️ 所有照片存储在云端，任何人都可以上传和查看，大家共享同一个相册～
+    </p>
+  </footer>
+
+  <!-- 图片弹窗 -->
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal-container">
+      <button class="modal-close" id="modalClose" title="关闭">&times;</button>
+      <div class="modal-image-wrapper">
+        <img src="" alt="" class="modal-image" id="modalImage">
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
